@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+    font-family: "Roboto", sans-serif;
+    /* background: #000; */
+}
+/* .container {
+    padding: 0 160px;
+} */
+/* nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #8b5cf6;
+    padding: 10px 20px;
+} */
+.name {
+    color: black;
+}
+ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+.nav-link {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.nav-link:hover {
+    color: red;
+}
+.active {
+    color: red;
+}
+.delete-icon {
+    color: black;
+    cursor: pointer;
+}
+@media screen and (max-width: 998px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 10px 20px;
+    }
+    .name {
+        font-size: 18px;
+    }
+    .menu-web {
+        display: none;
+    }
+    .menu-mobile {
+        transition: all 2s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        /* justify-content: center; */
+        align-items: center;
+        position: absolute;
+        top: 3rem;
+        left: 0;
+        padding: 20px 0;
+        width: 100%;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    }
+
+    /* .container {
+        padding: 0 10px;
+    } */
+}
+@media screen and (min-width: 998px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+    
+    .container {
+        padding: 0 50px;
+    }
+    .delete-icon {
+        display: none;
+    }
+}
+/* header ends */
