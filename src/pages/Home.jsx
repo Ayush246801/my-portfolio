@@ -1,13 +1,10 @@
 import React from 'react'
-
+import Hero from '../components/Hero'
+import About from './About'
+// import Hero form "../components/Hero"
 const Home = () => {
   return (
     <>
-    <div className="hero-section">
-      <div className="intro-content">
-        <h1>i am professional frontend developer</h1>
-      </div>
-    </div>
     </>
   )
 }

@@ -1,86 +1,100 @@
 import React, { useState } from "react";
-// import { FaHamburger } from "react-icons/fa";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import { GiHamburgerMenu } from "react-icons/gi";
-// import { MdDelete } from "react-icons/md";
-import { NavLink } from "react-router-dom";
+import { RxCross2 } from "react-icons/rx";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
 
-  const handleHamIcon = () => {
+  const handleHamClick = () => {
     setShowMenu(!showMenu);
   };
-  const handleLinkClick = () => {
-    if(showMenu) return setShowMenu(false)
-  }
 
-    return (
-      <>
-        <div className="container">
-          <nav>
-            <h1 className="name">aaYusH</h1>
-            <ul className={showMenu ? "menu-mobile" : "menu-web"}>
-              <li>
-                <NavLink
-                  onClick={handleLinkClick}
-                  className={({ isActive }) =>
-                    isActive ? "active nav-link" : "nav-link"
-                  }
-                  to="/"
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  onClick={handleLinkClick}
-                  className={({ isActive }) =>
-                    isActive ? "active nav-link" : "nav-link"
-                  }
-                  to="/about"
-                >
-                  About
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  onClick={handleLinkClick}
-                  className={({ isActive }) =>
-                    isActive ? "active nav-link" : "nav-link"
-                  }
-                  to="/skills"
-                >
-                  Skills
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  onClick={handleLinkClick}
-                  className={({ isActive }) =>
-                    isActive ? "active nav-link" : "nav-link"
-                  }
-                  to="/services"
-                >
-                  Services
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  onClick={handleLinkClick}
-                  className={({ isActive }) =>
-                    isActive ? "active nav-link" : "nav-link"
-                  }
-                  to="/contact"
-                >
-                  Contact
-                </NavLink>
-              </li>
-            </ul>
-            <GiHamburgerMenu onClick={handleHamIcon} className="delete-icon" />
-          </nav>
-        </div>
-      </>
-    );
+  return (
+    <nav className="bg-gray-800 fixed w-[100%] top-0">
+      <div className="flex md:px-10 lg:px-20 xl:px-28 2xl:px-40 justify-between items-center px-4 py-3">
+        <h1 className="text-gray-200 text-xl font-bold">aaYusH</h1>
+
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex space-x-6 text-gray-200">
+          <li>
+            <AnchorLink href="#home" className="hover:text-white">
+              Home
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink offset={110} href="#about" className="hover:text-white">
+              About
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink a href="#skill" className="hover:text-white">
+              Skills
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink href="#services" className="hover:text-white">
+              Services
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink href="#contact" className="hover:text-white">
+              Contact
+            </AnchorLink>
+          </li>
+        </ul>
+
+        {/* Hamburger */}
+        <button
+          onClick={handleHamClick}
+          className={`${
+            showMenu ? "hidden text-gray-200" : "text-gray-200 md:hidden"
+          }`}
+          aria-label="Toggle menu"
+        >
+          <GiHamburgerMenu size={20} />
+        </button>
+        <RxCross2
+          size={20}
+          onClick={handleHamClick}
+          className={`${
+            showMenu ? "inline-block text-gray-200" : "text-gray-200 hidden"
+          }`}
+        />
+      </div>
+
+      {/* Mobile Menu */}
+      {showMenu && (
+        <ul className="flex flex-col bg-gray-800 items-center gap-4 text-gray-200 md:hidden py-4">
+          <li>
+            <AnchorLink href="#home" onClick={() => setShowMenu(false)}>
+              Home
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink href="#about" onClick={() => setShowMenu(false)}>
+              About
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink href="#skill" onClick={() => setShowMenu(false)}>
+              Skills
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink href="#services" onClick={() => setShowMenu(false)}>
+              Services
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink href="#contact" onClick={() => setShowMenu(false)}>
+              Contact
+            </AnchorLink>
+          </li>
+        </ul>
+      )}
+    </nav>
+  );
 };
 
 export default Header;
