@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <section className="bg-gradient-to-r lg:max-w-[1024px] m-auto from-[#0D1117] via-[#161B22] to-[#0D1117] text-gray-300 px-6 py-16 lg:px-0 lg:py-24 min-h-screen">
+    <div className="bg-gradient-to-r lg:max-w-[1024px] m-auto from-[#0D1117] via-[#161B22] to-[#0D1117] text-gray-300 px-6 py-16 lg:px-0 lg:py-24 min-h-screen">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row justify-between gap-[80px]">
 
         {/* Left: About Me Content */}
@@ -12,7 +12,7 @@ const About = () => {
           </h2>
 
           <p className="text-center max-w-3xl mx-auto">
-            Hey there! I’m <span className="text-[#facc15] font-semibold">Aayush Shrestha</span>, a passionate front-end developer based in <span className="text-[#58A6FF]">Dharan, Nepal</span>. I specialize in building sleek, responsive websites using <span className="text-[#facc15]">React.js</span>, <span className="text-[#facc15]">Tailwind CSS</span>, and <span className="text-[#facc15]">JavaScript</span>.
+            Hey there! I’m <span className="text-[#fagicc15] font-semibold">Aayush Shrestha</span>, a passionate front-end developer based in <span className="text-[#58A6FF]">Dharan, Nepal</span>. I specialize in building sleek, responsive websites using <span className="text-[#facc15]">React.js</span>, <span className="text-[#facc15]">Tailwind CSS</span>, and <span className="text-[#facc15]">JavaScript</span>.
           </p>
 
           <p className="text-center max-w-3xl mx-auto">
@@ -41,7 +41,7 @@ const About = () => {
           </ul>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

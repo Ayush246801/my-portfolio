@@ -92,7 +92,7 @@ const Contact = () => {
             <div className="mt-3 flex justify-center">
               <button
                 type="submit"
-                className="bg-[#58A6FF] text-white px-6 py-2 rounded-md hover:bg-[#6490ca] transition duration-200"
+                className="bg-[#58A6FF] text-white px-6 py-2 cursor-pointer rounded-md hover:bg-[#6490ca] transition duration-200"
               >
                 Submit
               </button>
